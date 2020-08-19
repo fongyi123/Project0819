@@ -2,12 +2,12 @@
 // $link = mysqli_connect("localhost","root","root","lab0819db",8889);
 // mysqli_query($link,"set name utf-8");
 require("connDB.php");
-$sqlStatement = <<< multi
+$sqlSta = <<< multi
     select employeeId, firstName,lastName, e.cityId, cityName 
         from city c join employee e on e.cityId = c.cityId
     multi;
 // "select * from employee";
-$result = mysqli_query($link, $sqlStatement);
+$result = mysqli_query($link, $sqlSta);
 
 ?>
 
@@ -26,20 +26,17 @@ $result = mysqli_query($link, $sqlStatement);
 
 <div class="container">
   
-<h2>Employee List
-    
-        <a href="addEmployee.php" class="btn btn-outline-info btn-md float-right">New</a>
-  </h2>
+<h2>Employee List</h2>
 
-  <table class="table">
+  <table class="table table-striped">
     <thead>
 
       <tr class="info">
         <th >Firstname</th>
         <th>Lastname</th>
         <th>city</th>
-        <td></td>
-        <th></th>
+        <td><a href="addEmployee.php" class="btn btn-warning ">add </a></td>
+        
 
       </tr>
     </thead>

@@ -6,7 +6,7 @@ header("content-type:text/html; charset=utf-8");
 
 // 1. 連接資料庫伺服器
 //    @錯誤暫時不顯示                                             or可以用||代替
-$link = @mysqli_connect("localhost", "root", "root",null,8889) or die(mysqli_connect_error());
+$link = @mysqli_connect("localhost", "root", "",null,3306) or die(mysqli_connect_error());
 // var_dump($link);
 //                查詢   連線目標  字元集utf8
 $result = mysqli_query($link, "set names utf8");
